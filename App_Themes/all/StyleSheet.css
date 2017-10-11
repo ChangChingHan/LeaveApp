@@ -1,0 +1,49 @@
+﻿body
+{
+	font-family: Verdana;
+	font-size: 10pt;
+	background-color: #FF0000;
+	margin: 0px;
+}
+.welcome
+{
+	background-color: #C0C0C0;
+	text-align :left;
+	margin:0px;
+}
+.links
+{
+	font-family: verdana;
+	font-size: 10pt;
+	font-weight: bold;
+	background-color: #99CCFF;
+}
+
+.header
+{
+	font-family: arial;
+	font-size: 25px;
+	font-weight: 800;
+	color: white;
+	background-color: black;
+	letter-spacing: 5pt;
+	text-align: center;
+}
+
+.footer
+{
+	font-family: verdana;
+	font-weight: 800;
+	color: #FFFFFF;
+	background-color: #000000;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.maintable
+{
+	width: 700px;
+	height: 550px;
+	background-color: white;
+  
+}

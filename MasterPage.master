@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Requests Management System</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <center>
+     <table class="maintable" cellpadding="0px" cellspacing="0px" border="0px">
+       <tr style="height:50px"  valign ="top">
+        <td>
+         <div class="header">出缺勤系統</div>
+         <div class="welcome">
+             <asp:Label ID="lblFullname" runat="server" Text=""></asp:Label>
+             &nbsp;&nbsp;
+             <asp:LinkButton ID="lbLogout" CausesValidation ="false"     runat="server" onclick="lbLogout_Click">登出</asp:LinkButton>
+         </div>
+        </td>
+       </tr>
+       <tr>
+       <td align="center" valign="top" >
+         <table style="width:100%;height:100%" cellpadding="0px" cellspacing="0px" border="0px">
+         <tr>
+         <td valign="top" width="25%" class="links">
+          <a href="Default.aspx">首頁</a>
+          <p/>
+          <a href="addleaverequest.aspx">請假</a>
+          <p/>
+          <a href="cancelleaverequest.aspx">取消請假</a>
+          <p />
+          <a href="responseleaverequest.aspx">簽核</a>
+          <p />
+          <a href="leaverequestreport.aspx">請假報表</a>
+          <p />
+          <a href="changepassword.aspx">更改密碼</a>
+         </td>
+         <td valign="top">
+          <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+         </td>
+         </tr>
+         </table>
+       </td>
+       </tr>
+       <tr style="height:20px" valign= "bottom">
+       <td>
+          <div  class="footer">All Rights reserved.&copy; Srikanth Technologies</div>
+       </td>
+       </tr>
+     </table>
+    </center>
+
+    </form>
+</body>
+</html>

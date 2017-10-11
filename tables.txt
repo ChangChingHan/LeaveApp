@@ -1,0 +1,50 @@
+﻿create table employees
+(empid  int  primary key,
+ password  varchar(10)  not null,
+ fullname  varchar(50) not null,
+ email    varchar(50) unique not null,
+ mobile   varchar(30) 
+)
+
+create table leaverequests
+(  requestid  int  identity,
+   empid  int  references employees(empid) on delete cascade,
+   requestedon  datetime,
+   startdate    datetime,
+   enddate     datetime, 
+   leavetype   char(1) not null check ( leavetype in ('s','c','p')),
+   reason      varchar(100),
+   remarks     varchar(1000),
+   status      char(1) not null check ( status in ('n','a','r')),
+   check ( startdate < enddate),
+   check ( startdate >= getdate()) 
+)   
+
+create table places
+(  placeid int primary key identity,
+   placename varchar(50) not null
+)   
+
+create table cabrequests
+(  requestid  int  identity,
+   empid  int  references employees(empid) on delete cascade,
+   requestedon   datetime,
+   requireddate  datetime,
+   requiredtime  char(5), 
+   fromplace    int  references places(placeid),
+   toplace      int  references places(placeid),
+   remarks     varchar(1000),
+   status      char(1) not null check ( status in ('n','a','r')),
+   check ( requireddate >= getdate()) 
+)   
+
+insert into employees values(1001,'scott','Scott Michell','scott@abc.com','3434343433')
+insert into employees values(1002,'mike','Mike Anderson','mike@abc.com','989898989')
+insert into employees values(1003,'bob','Bob the Builder','bob@abc.com','8080808089')
+
+insert into places values('Office')
+insert into places values('MVP colony')
+insert into places values('Dwarkanagar')
+insert into places values('NAD Kotta Road')
+insert into places values('Steel Plant')
+
